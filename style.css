@@ -1,0 +1,137 @@
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #fff;
+}
+
+.volume {
+    display: flex;
+}
+
+.contaner {
+    margin: 0 auto;
+    background-color: #444;
+    opacity: .8;
+    border-radius: 10px;
+    width: 60%;
+}
+
+.wrapper {
+    padding: 10px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.song {
+    text-align: center
+}
+
+.player-icon {
+    width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    opacity: .8;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.player-icon:hover {
+    opacity: 1;
+}
+
+.progress_contaner {
+    background: #efefef;
+    border-radius: 5px;
+    width: 150px;
+    height: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.progress {
+    background: #0075ff;
+    border-radius: 5px;
+    height: 10px;
+}
+
+.playBtn {
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+    background-image: url("./svg/play.svg");
+}
+
+.prevBtn {
+    background-image: url("./svg/play-prev.svg")
+}
+
+.nextBtn {
+    background-image: url("./svg/play-next.svg")
+}
+
+.soundVolume {
+    width: 75%;
+}
+
+.pause {
+    background-image: url("./svg/pause.svg");
+}
+
+.duration-timer {
+    display: flex;
+}
+.timer::after{
+    content: ' / ';
+    white-space: pre;
+}
+
+/* из основного частично*************************************/
+.play-item {
+    position: relative;
+    padding: 5px;
+    padding-left: 20px;
+    list-style: none;
+    opacity: .8;
+    cursor: pointer;
+    transition: .3s;
+
+    display: flex;
+    align-items: center;
+  }
+  
+  .play-item:hover {
+    opacity: 1;
+  }
+  
+  .play-item::before {
+        display: inline-flex;
+        content: '';
+        background-image: url('./svg/play.svg');
+        background-size: 20px 20px;
+        height: 20px;
+        width: 20px;
+  }
+  .play-item.item-active::before{
+    display: inline-flex;
+    content: '';
+    background-image: url('./svg/pause.svg');
+    background-size: 20px 20px;
+    height: 20px;
+    width: 20px;
+  }
+
+  .item-active {
+    color: chartreuse;
+    font-size: larger;
+    font-weight: bold;
+  }
