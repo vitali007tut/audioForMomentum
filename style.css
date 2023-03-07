@@ -1,36 +1,43 @@
-body {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
     font-family: 'Arial', sans-serif;
     font-size: 16px;
     color: #fff;
-}
-
-.volume {
-    display: flex;
-}
-
-.contaner {
-    margin: 0 auto;
-    background-color: #444;
-    opacity: .8;
-    border-radius: 10px;
-    width: 60%;
-}
-
-.wrapper {
-    padding: 10px;
-}
-
-.controls {
+    background-color: #bbb;
+  }
+  
+  .player-controls {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-}
-
-.song {
-    text-align: center
-}
-
-.player-icon {
+    justify-content: space-between;
+    width: 120px;
+    margin-bottom: 28px;
+  }
+  
+  .play-list {
+    text-align: left;
+  }
+  
+  .play-item {
+    position: relative;
+    padding: 5px;
+    padding-left: 20px;
+    list-style: none;
+    opacity: .8;
+    cursor: pointer;
+    transition: .3s;
+  }
+  
+  .play-item:hover {
+    opacity: 1;
+  }
+  
+  .player-icon {
     width: 32px;
     height: 32px;
     background-size: 32px 32px;
@@ -42,13 +49,58 @@ body {
     opacity: .8;
     cursor: pointer;
     transition: .3s;
-}
-
-.player-icon:hover {
+  }
+  
+  .player-icon:hover{
     opacity: 1;
-}
-
-.progress_contaner {
+  }
+  
+  .volume {
+    display: flex;
+  }
+  
+  .contaner {
+    margin: 0 auto;
+    background-color: #444;
+    opacity: .8;
+    border-radius: 10px;
+    width: 60%;
+    transition: all 1s linear
+  }
+  
+  .wrapper {
+    padding: 10px;
+  }
+  
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .song {
+    text-align: center
+  }
+  
+  .player__icon {
+    width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    opacity: .8;
+    cursor: pointer;
+    transition: .3s;
+  }
+  
+  .player__icon:hover {
+    opacity: 1;
+  }
+  
+  .progress_contaner {
     background: #efefef;
     border-radius: 5px;
     width: 150px;
@@ -56,47 +108,47 @@ body {
     cursor: pointer;
     display: flex;
     align-items: center;
-}
-
-.progress {
+  }
+  
+  .progress {
     background: #0075ff;
     border-radius: 5px;
     height: 10px;
-}
-
-.playBtn {
+  }
+  
+  .playBtn {
     width: 40px;
     height: 40px;
     background-size: 40px 40px;
     background-image: url("./svg/play.svg");
-}
-
-.prevBtn {
+  }
+  
+  .prevBtn {
     background-image: url("./svg/play-prev.svg")
-}
-
-.nextBtn {
+  }
+  
+  .nextBtn {
     background-image: url("./svg/play-next.svg")
-}
-
-.soundVolume {
+  }
+  
+  .soundVolume {
     width: 75%;
-}
-
-.pause {
+  }
+  
+  .pauseCustom {
     background-image: url("./svg/pause.svg");
-}
-
-.duration-timer {
+  }
+  
+  .duration-timer {
     display: flex;
-}
-.timer::after{
+  }
+  
+  .timer::after {
     content: ' / ';
     white-space: pre;
-}
-
-/* из основного частично*************************************/
-.play-item {
+  }
+  
+  .play--item {
     position: relative;
     padding: 5px;
     padding-left: 20px;
@@ -104,34 +156,37 @@ body {
     opacity: .8;
     cursor: pointer;
     transition: .3s;
-
+  
     display: flex;
     align-items: center;
   }
   
-  .play-item:hover {
+  .play--item:hover {
     opacity: 1;
   }
   
-  .play-item::before {
-        display: inline-flex;
-        content: '';
-        background-image: url('./svg/play.svg');
-        background-size: 20px 20px;
-        height: 20px;
-        width: 20px;
-  }
-  .play-item.item-active::before{
+  .play--item::before {
     display: inline-flex;
     content: '';
-    background-image: url('./svg/pause.svg');
+    background-image: url('./svg/play.svg');
     background-size: 20px 20px;
     height: 20px;
     width: 20px;
+    padding-left: 10px;
+    background-repeat: no-repeat;
   }
-
-  .item-active {
+  
+  .item--active::before {
+    background-image: url('./svg/pause.svg');
+  }
+  
+  .item--active {
     color: chartreuse;
-    font-size: larger;
-    font-weight: bold;
+  }
+  
+  .playCustom {
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+    background-image: url("./svg/play.svg");
   }
